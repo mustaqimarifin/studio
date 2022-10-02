@@ -18,6 +18,7 @@
     "react-dom": "^17.0.0",
     "react-is": "^17.0.0",
     "sanity": "dev-preview",
+    "sanity-plugin-markdown": "^3.0.0-v3-studio.2",
     "styled-components": "^5.2.0"
   },
   "devDependencies": {
