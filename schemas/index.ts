@@ -3,4 +3,7 @@ import post from './post'
 import tag from './tag'
 import siteConfig from './siteConfig'
 import blockContent from './blockContent'
-export const schemaTypes = [author, post, blockContent, tag, siteConfig]
+import coverImage from './coverImage'
+import social from './social'
+import media from './media'
+export const schemaTypes = [media, social, coverImage, author, post, blockContent, tag, siteConfig]

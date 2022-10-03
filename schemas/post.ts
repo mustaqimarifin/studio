@@ -1,3 +1,5 @@
+// import coverImage from './coverImage'
+
 const post = {
   name: 'post',
   title: 'Post',
@@ -34,31 +36,9 @@ const post = {
     {
       name: 'coverImage',
       title: 'Cover Image',
-      type: 'image',
-      fields: [
-        {
-          name: 'caption',
-          type: 'string',
-          title: 'Image caption',
-          description: 'Appears below image.',
-          options: {
-            isHighlighted: true,
-          },
-        },
-        {
-          name: 'alt',
-          type: 'string',
-          title: 'Alternative text',
-          description: 'Important for SEO and accessiblity.',
-          options: {
-            isHighlighted: true,
-          },
-        },
-      ],
-      options: {
-        hotspot: true,
-      },
+      type: 'coverImage',
     },
+
     {
       name: 'tags',
       title: 'Tags',
@@ -84,7 +64,7 @@ const post = {
       media: 'coverImage',
     },
     prepare(selection: any) {
-      const author = selection
+      const {author} = selection
       return Object.assign({}, selection, {
         subtitle: author && `by ${author}`,
       })

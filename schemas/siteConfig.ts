@@ -43,8 +43,14 @@ const siteConfig = {
       title: 'Copyright Name',
       description: 'Enter company name to appear in footer after ©',
     },
-
     {
+      title: 'Social Links',
+      name: 'social',
+      type: 'social',
+      fieldset: 'social',
+    },
+
+    /*  {
       title: 'Main logo',
       description: 'Upload your main logo here. SVG preferred. ',
       name: 'logo',
@@ -81,7 +87,7 @@ const siteConfig = {
         },
       ],
     },
-
+ */
     {
       name: 'email',
       type: 'string',
@@ -116,46 +122,6 @@ const siteConfig = {
       title: 'Web3Forms Access Key',
       description:
         'Enter Access key obtained from web3forms.com. It is required to make the form work.',
-    },
-
-    {
-      name: 'social',
-      type: 'array',
-      title: 'Social Links',
-      description: 'Enter your Social Media URLs',
-      validation: (Rule: {unique: () => any}) => Rule.unique(),
-      of: [
-        {
-          type: 'object',
-          fields: [
-            {
-              type: 'string',
-              name: 'media',
-              title: 'Choose Social Media',
-              options: {
-                list: [
-                  {title: 'Twitter', value: 'twitter'},
-                  {title: 'Facebook', value: 'facebook'},
-                  {title: 'Instagram', value: 'instagram'},
-                  {title: 'Linkedin', value: 'linkedin'},
-                  {title: 'Youtube', value: 'youtube'},
-                ],
-              },
-            },
-            {
-              type: 'url',
-              name: 'url',
-              title: 'Full Profile URL',
-            },
-          ],
-          preview: {
-            select: {
-              title: 'media',
-              subtitle: 'url',
-            },
-          },
-        },
-      ],
     },
 
     {
