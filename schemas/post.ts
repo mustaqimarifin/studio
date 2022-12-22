@@ -1,16 +1,20 @@
 // import coverImage from './coverImage'
+import {BookIcon} from '@sanity/icons'
+import {defineField, defineType} from 'sanity'
+import author from './author'
 
-const post = {
+export default defineType({
   name: 'post',
+  icon: BookIcon,
   title: 'Post',
   type: 'document',
   fields: [
-    {
+    defineField({
       name: 'title',
       title: 'Title',
       type: 'string',
-    },
-    {
+    }),
+    defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
@@ -18,58 +22,58 @@ const post = {
         source: 'title',
         maxLength: 96,
       },
-    },
-    {
+    }),
+    defineField({
       name: 'excerpt',
       title: 'Excerpt',
       description: 'The excerpt is used in blog feeds, and also for search results',
       type: 'string',
 
       validation: (Rule: {max: (arg0: number) => any}) => Rule.max(200),
-    },
-    {
+    }),
+    defineField({
       name: 'author',
       title: 'Author',
       type: 'reference',
-      to: {type: 'author'},
-    },
-    {
+      to: [{type: author.name}],
+    }),
+    defineField({
       name: 'coverImage',
       title: 'Cover Image',
       type: 'coverImage',
-    },
+    }),
 
-    {
+    defineField({
       name: 'tags',
       title: 'Tags',
       type: 'array',
       of: [{type: 'reference', to: {type: 'tag'}}],
-    },
-    {
+    }),
+    defineField({
       name: 'date',
       title: 'Date',
       type: 'datetime',
-    },
-    {
+    }),
+    defineField({
       name: 'content',
       title: 'Content',
       type: 'markdown',
-    },
+    }),
   ],
-
   preview: {
     select: {
       title: 'title',
       author: 'author.name',
+      //date: 'date',
       media: 'coverImage',
     },
-    prepare(selection: any) {
-      const {author} = selection
-      return Object.assign({}, selection, {
-        subtitle: author && `by ${author}`,
-      })
+    prepare({title, media, author, date}) {
+      const subtitles = [
+        author && `by ${author}`,
+        //date && `on ${format(parseISO(date), 'LLL d, yyyy')}`,
+      ].filter(Boolean)
+
+      return {title, media, subtitle: subtitles.join(' ')}
     },
   },
-}
-
-export default post
+})

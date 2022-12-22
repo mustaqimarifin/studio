@@ -1,30 +1,26 @@
-const coverImage = {
+import {ImageIcon } from '@sanity/icons'
+import {defineField, defineType} from 'sanity'
+
+export default defineType({
   name: 'coverImage',
   title: 'Cover Image',
+  icon: ImageIcon,
   type: 'image',
   fields: [
-    {
+    defineField({
       name: 'caption',
       type: 'string',
       title: 'Image caption',
       description: 'Appears below image.',
-      options: {
-        isHighlighted: true,
-      },
-    },
-    {
+    }),
+    defineField({
       name: 'alt',
       type: 'string',
       title: 'Alternative text',
       description: 'Important for SEO and accessiblity.',
-      options: {
-        isHighlighted: true,
-      },
-    },
+    }),
   ],
   options: {
     hotspot: true,
   },
-}
-
-export default coverImage
+})

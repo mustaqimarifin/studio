@@ -1,14 +1,19 @@
-const tag = {
+// import coverImage from './coverImage'
+import {TagIcon} from '@sanity/icons'
+import {defineField, defineType} from 'sanity'
+
+export default defineType({
   name: 'tag',
+  icon:TagIcon,
   title: 'Tag',
   type: 'document',
   fields: [
-    {
+    defineField({
       name: 'title',
       title: 'Title',
       type: 'string',
-    },
-    {
+    }),
+    defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
@@ -17,8 +22,8 @@ const tag = {
         maxLength: 96,
       },
       validation: (Rule: {required: () => any}) => Rule.required(),
-    },
-    {
+    }),
+    defineField({
       name: 'color',
       title: 'Color',
       type: 'string',
@@ -31,13 +36,11 @@ const tag = {
           {title: 'Orange', value: 'orange'},
         ],
       },
-    },
-    {
+    }),
+    defineField({
       name: 'description',
       title: 'Description',
       type: 'text',
-    },
+    }),
   ],
-}
-
-export default tag
+})
