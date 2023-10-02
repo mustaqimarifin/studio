@@ -1,10 +1,10 @@
 // import coverImage from './coverImage'
-import {TagIcon} from '@sanity/icons'
+import {TagIcon} from 'lucide-react'
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
   name: 'tag',
-  icon:TagIcon,
+  icon: TagIcon,
   title: 'Tag',
   type: 'document',
   fields: [

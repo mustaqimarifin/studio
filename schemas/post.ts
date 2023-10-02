@@ -1,7 +1,7 @@
 // import coverImage from './coverImage'
-import {BookIcon} from '@sanity/icons'
 import {defineField, defineType} from 'sanity'
 import author from './author'
+import {BookIcon} from 'lucide-react'
 
 export default defineType({
   name: 'post',
@@ -67,7 +67,7 @@ export default defineType({
       //date: 'date',
       media: 'coverImage',
     },
-    prepare({title, media, author, date}) {
+    prepare({title, media, author}) {
       const subtitles = [
         author && `by ${author}`,
         //date && `on ${format(parseISO(date), 'LLL d, yyyy')}`,

@@ -1,4 +1,4 @@
-import {ImageIcon } from '@sanity/icons'
+import {ImageIcon} from 'lucide-react'
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
