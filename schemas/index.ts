@@ -6,4 +6,15 @@ import blockContent from './blockContent'
 import coverImage from './coverImage'
 import social from './social'
 import media from './media'
-export const schemaTypes = [media, social, coverImage, author, post, blockContent, tag, siteConfig]
+import caseStudy from './caseStudy'
+export const schemaTypes = [
+  media,
+  social,
+  coverImage,
+  author,
+  post,
+  blockContent,
+  tag,
+  siteConfig,
+  caseStudy,
+]
