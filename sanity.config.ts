@@ -7,7 +7,7 @@ export const apiVersion = process.env.NEXT_PUBLIC_SANITY_API_VERSION || '2023-05
 export default defineConfig({
   name: 'default',
   title: 'studioOlive',
-  projectId: 'do33z8xq',
+  projectId: '861c1zhj',
   dataset: 'production',
   plugins: [deskTool(), markdownSchema(), visionTool({defaultApiVersion: apiVersion})],
   schema: {
