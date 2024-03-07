@@ -1,12 +1,12 @@
 // import coverImage from './coverImage'
 import {defineField, defineType} from 'sanity'
-import author from './author'
-import {PlugZapIcon} from 'lucide-react'
+
+import {LucideGhost} from 'lucide-react'
 
 export default defineType({
-  name: 'case-study',
-  icon: PlugZapIcon,
-  title: 'Case Study',
+  name: 'lilbits',
+  icon: LucideGhost,
+  title: 'LilBits',
   type: 'document',
   fields: [
     defineField({

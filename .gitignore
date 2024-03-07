@@ -26,3 +26,5 @@
 *.tsbuildinfo
 .env
 .env.local
+
+nano.mdx

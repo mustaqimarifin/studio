@@ -1,11 +1,11 @@
 // import coverImage from './coverImage'
 import {defineField, defineType} from 'sanity'
 import author from './author'
-import {BookIcon} from 'lucide-react'
+import {AsteriskSquareIcon} from 'lucide-react'
 
 export default defineType({
   name: 'post',
-  icon: BookIcon,
+  icon: AsteriskSquareIcon,
   title: 'Post',
   type: 'document',
   fields: [

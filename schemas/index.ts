@@ -6,7 +6,7 @@ import blockContent from './blockContent'
 import coverImage from './coverImage'
 import social from './social'
 import media from './media'
-import caseStudy from './caseStudy'
+import lilbits from './lilbits'
 export const schemaTypes = [
   media,
   social,
@@ -16,5 +16,5 @@ export const schemaTypes = [
   blockContent,
   tag,
   siteConfig,
-  caseStudy,
+  lilbits,
 ]
